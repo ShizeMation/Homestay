@@ -1,7 +1,8 @@
 # Homestay
-## Databases I Project: Home rental system
+## Databases I Project: Home Rental System
 
-#### Developers: Shize Li, Ann Song
+#### Developers: Shize Li, Ann Soong
+#### This is a school project. Any resemblance to actual businesses and/or organizations is purely coincidental.
 
 ### Setup for developers (Windows):
 1. Install Python 3.4 or above.
@@ -14,9 +15,9 @@
     ```
     env\Scripts\activate
     ```
-5. Install Django:
+5. Install Flask and psycopg2:
     ```
-    pip install django
+    pip install flask psycopg2
     ```
 6. Navigate into the project folder:
     ```
@@ -24,8 +25,8 @@
     ```
 7. Run the server:
     ```
-    py manage.py runserver
+    py start.py
     ```
-8. If it runs successfully, a URL will be given to you for accessing the web interface. CTRL+C will stop the process.
+8. If it runs successfully, a URL will be given to you for accessing the web interface.
 
 #### Note: you must activate the environment (step 4) before running the project or working on the project!
