@@ -1,28 +1,11 @@
 from homestay.database import Database
+import os, sys
 
 def makedb():
+    with open(os.path.join(sys.path[0], 'schema.sql')) as f:
+        query = f.read()
     with Database() as db:
-        db.execute(
-            """
-            DROP TABLE IF EXISTS TestTable;
-            """
-        )
-        db.execute(
-            """
-            CREATE TABLE TestTable (
-                test_id int PRIMARY KEY,
-                test_txt text,
-                test_bl bool
-            );
-            """
-        )
-        db.execute(
-            """
-            INSERT INTO TestTable VALUES (%s, %s, %s);
-            INSERT INTO TestTable VALUES (%s, %s, %s);
-            """,
-            (212, "crow", False, 556, "squid", True)
-        )
+        db.execute(query)
 
 if __name__ == "__main__":
     makedb()
