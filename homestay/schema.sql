@@ -1,5 +1,5 @@
 CREATE TABLE guest (
-    guest_id INTEGER PRIMARY KEY,
+    guest_id VARCHAR(32) PRIMARY KEY,
     first_name VARCHAR(40) NOT NULL,
     last_name VARCHAR(40) NOT NULL,
     street_address VARCHAR(40) NOT NULL,
@@ -13,14 +13,14 @@ CREATE TABLE guest (
 );
 
 CREATE TABLE branch (
-    branch_id INTEGER PRIMARY KEY,
-    manager_id INTEGER NOT NULL,
+    branch_id VARCHAR(32) PRIMARY KEY,
+    manager_id VARCHAR(32) NOT NULL,
     country VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE employee (
-    employee_id INTEGER PRIMARY KEY,
-    branch_id INTEGER NOT NULL,
+    employee_id VARCHAR(32) PRIMARY KEY,
+    branch_id VARCHAR(32) NOT NULL,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     street_address VARCHAR(20) NOT NULL,
@@ -43,9 +43,9 @@ CREATE TABLE employee (
 );
 
 CREATE TABLE host (
-    host_id INTEGER PRIMARY KEY,
-    guest_id INTEGER NOT NULL,
-    rep_id INTEGER NOT NULL,
+    host_id VARCHAR(32) PRIMARY KEY,
+    guest_id VARCHAR(32) NOT NULL,
+    rep_id VARCHAR(32) NOT NULL,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     street_address VARCHAR(20) NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE host (
 );
 
 CREATE TABLE pricing (
-    pricing_id INTEGER PRIMARY KEY,
+    pricing_id VARCHAR(32) PRIMARY KEY,
     property_type VARCHAR(20) NOT NULL CHECK (
         property_type = 'apartment' OR
         property_type = 'bungalow' OR
@@ -86,9 +86,9 @@ CREATE TABLE pricing (
 );
 
 CREATE TABLE property (
-    property_id INTEGER PRIMARY KEY,
-    host_id INTEGER NOT NULL,
-    pricing_id INTEGER NOT NULL,
+    property_id VARCHAR(32) PRIMARY KEY,
+    host_id VARCHAR(32) NOT NULL,
+    pricing_id VARCHAR(32) NOT NULL,
     max_guests INTEGER NOT NULL CHECK (max_guests >= 1),
     bed_type VARCHAR(10) NOT NULL CHECK (
         bed_type = 'single' OR
@@ -108,31 +108,30 @@ CREATE TABLE property (
 );
 
 CREATE TABLE agreement (
-    agreement_id INTEGER PRIMARY KEY,
-    guest_id INTEGER,
-    host_id INTEGER,
-    property_id INTEGER,
-    begin_date DATE,
-    end_date DATE CHECK (end_date > begin_date),
+    agreement_id VARCHAR(32) PRIMARY KEY,
+    guest_id VARCHAR(32) NOT NULL,
+    host_id VARCHAR(32) NOT NULL,
+    property_id VARCHAR(32) NOT NULL,
+    begin_date DATE NOT NULL,
+    end_date DATE NOT NULL CHECK (end_date > begin_date),
     FOREIGN KEY (guest_id) REFERENCES guest,
     FOREIGN KEY (host_id) REFERENCES host,
     FOREIGN KEY (property_id) REFERENCES property
 );
 
 CREATE TABLE payment (
-    agreement_id INTEGER PRIMARY KEY,
-    host_id INTEGER NOT NULL,
-    guest_id INTEGER NOT NULL,
-    method VARCHAR(40) CHECK (
+    agreement_id VARCHAR(32) PRIMARY KEY,
+    host_id VARCHAR(32) NOT NULL,
+    guest_id VARCHAR(32) NOT NULL,
+    method VARCHAR(40) NOT NULL CHECK (
         method = 'cash' OR
         method = 'check' OR
         method = 'credit card' OR
         method = 'debit card'
     ),
-    amount NUMERIC(8,2) CHECK (amount >= 0),
-    transaction_status VARCHAR(10) CHECK (
-        ((method = 'cash' OR method = 'check') AND transaction_status = 'completed') OR
-        ((method = 'credit card' OR method = 'debit card') AND transaction_status = 'approved') OR
+    amount NUMERIC(8,2) NOT NULL CHECK (amount >= 0),
+    transaction_status VARCHAR(10) NOT NULL CHECK (
+        transaction_status = 'completed' OR
         transaction_status = 'pending'
     ),
     FOREIGN KEY (agreement_id) REFERENCES agreement,
@@ -141,11 +140,11 @@ CREATE TABLE payment (
 );
 
 CREATE TABLE review (
-    agreement_id INTEGER PRIMARY KEY,
-    rating SMALLINT CHECK (rating >= 1 AND rating <= 5),
-    communication_comment TEXT,
-    cleanliness_comment TEXT,
-    value_comment TEXT,
-    other_comment TEXT,
+    agreement_id VARCHAR(32) PRIMARY KEY,
+    rating SMALLINT NOT NULL CHECK (rating >= 1 AND rating <= 5),
+    communication_comment VARCHAR(500) NOT NULL,
+    cleanliness_comment VARCHAR(500) NOT NULL,
+    value_comment VARCHAR(500) NOT NULL,
+    other_comment VARCHAR(500) NOT NULL,
     FOREIGN KEY (agreement_id) REFERENCES agreement
 );
