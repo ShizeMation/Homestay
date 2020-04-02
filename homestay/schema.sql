@@ -1,4 +1,8 @@
-CREATE TABLE guest (
+CREATE SCHEMA homestay AUTHORIZATION postgres;
+
+GRANT ALL ON SCHEMA homestay TO postgres;
+
+CREATE TABLE homestay.guest (
     guest_id VARCHAR(32) PRIMARY KEY,
     first_name VARCHAR(40) NOT NULL,
     last_name VARCHAR(40) NOT NULL,
@@ -12,13 +16,13 @@ CREATE TABLE guest (
     salt VARCHAR(64) NOT NULL
 );
 
-CREATE TABLE branch (
+CREATE TABLE homestay.branch (
     branch_id VARCHAR(32) PRIMARY KEY,
     manager_id VARCHAR(32) NOT NULL,
     country VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE employee (
+CREATE TABLE homestay.employee (
     employee_id VARCHAR(32) PRIMARY KEY,
     branch_id VARCHAR(32) NOT NULL,
     first_name VARCHAR(50) NOT NULL,
@@ -39,10 +43,10 @@ CREATE TABLE employee (
         job_position = 'manager'
     ),
     salary NUMERIC(8,2) NOT NULL CHECK (salary >= 0),
-    FOREIGN KEY (branch_id) REFERENCES branch
+    FOREIGN KEY (branch_id) REFERENCES homestay.branch
 );
 
-CREATE TABLE host (
+CREATE TABLE homestay.host (
     host_id VARCHAR(32) PRIMARY KEY,
     guest_id VARCHAR(32) NOT NULL,
     rep_id VARCHAR(32) NOT NULL,
@@ -56,11 +60,11 @@ CREATE TABLE host (
     phone VARCHAR (16) NOT NULL,
     password_hash VARCHAR(64) NOT NULL,
     salt VARCHAR(64) NOT NULL,
-    FOREIGN KEY (guest_id) REFERENCES guest,
-    FOREIGN KEY (rep_id) REFERENCES employee(employee_id)
+    FOREIGN KEY (guest_id) REFERENCES homestay.guest,
+    FOREIGN KEY (rep_id) REFERENCES homestay.employee(employee_id)
 );
 
-CREATE TABLE pricing (
+CREATE TABLE homestay.pricing (
     pricing_id VARCHAR(32) PRIMARY KEY,
     property_type VARCHAR(20) NOT NULL CHECK (
         property_type = 'apartment' OR
@@ -85,7 +89,7 @@ CREATE TABLE pricing (
     rate NUMERIC(8,2) NOT NULL
 );
 
-CREATE TABLE property (
+CREATE TABLE homestay.property (
     property_id VARCHAR(32) PRIMARY KEY,
     host_id VARCHAR(32) NOT NULL,
     pricing_id VARCHAR(32) NOT NULL,
@@ -103,23 +107,23 @@ CREATE TABLE property (
     state_province VARCHAR(50) NOT NULL,
     country VARCHAR(50) NOT NULL,
     available_date DATE NOT NULL,
-    FOREIGN KEY (host_id) REFERENCES host,
-    FOREIGN KEY (pricing_id) REFERENCES pricing
+    FOREIGN KEY (host_id) REFERENCES homestay.host,
+    FOREIGN KEY (pricing_id) REFERENCES homestay.pricing
 );
 
-CREATE TABLE agreement (
+CREATE TABLE homestay.agreement (
     agreement_id VARCHAR(32) PRIMARY KEY,
     guest_id VARCHAR(32) NOT NULL,
     host_id VARCHAR(32) NOT NULL,
     property_id VARCHAR(32) NOT NULL,
     begin_date DATE NOT NULL,
     end_date DATE NOT NULL CHECK (end_date > begin_date),
-    FOREIGN KEY (guest_id) REFERENCES guest,
-    FOREIGN KEY (host_id) REFERENCES host,
-    FOREIGN KEY (property_id) REFERENCES property
+    FOREIGN KEY (guest_id) REFERENCES homestay.guest,
+    FOREIGN KEY (host_id) REFERENCES homestay.host,
+    FOREIGN KEY (property_id) REFERENCES homestay.property
 );
 
-CREATE TABLE payment (
+CREATE TABLE homestay.payment (
     agreement_id VARCHAR(32) PRIMARY KEY,
     host_id VARCHAR(32) NOT NULL,
     guest_id VARCHAR(32) NOT NULL,
@@ -134,17 +138,17 @@ CREATE TABLE payment (
         transaction_status = 'completed' OR
         transaction_status = 'pending'
     ),
-    FOREIGN KEY (agreement_id) REFERENCES agreement,
-    FOREIGN KEY (host_id) REFERENCES host,
-    FOREIGN KEY (guest_id) REFERENCES guest
+    FOREIGN KEY (agreement_id) REFERENCES homestay.agreement,
+    FOREIGN KEY (host_id) REFERENCES homestay.host,
+    FOREIGN KEY (guest_id) REFERENCES homestay.guest
 );
 
-CREATE TABLE review (
+CREATE TABLE homestay.review (
     agreement_id VARCHAR(32) PRIMARY KEY,
     rating SMALLINT NOT NULL CHECK (rating >= 1 AND rating <= 5),
     communication_comment VARCHAR(500) NOT NULL,
     cleanliness_comment VARCHAR(500) NOT NULL,
     value_comment VARCHAR(500) NOT NULL,
     other_comment VARCHAR(500) NOT NULL,
-    FOREIGN KEY (agreement_id) REFERENCES agreement
+    FOREIGN KEY (agreement_id) REFERENCES homestay.agreement
 );
