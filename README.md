@@ -7,12 +7,12 @@
 ### Setup (Windows):
 1. Run a postgresql database with the following settings:
     ```
-    host: localhost
+    host: 'localhost'
     database: 'postgres'
     user: 'postgres'
     password: 'postgres'
     ```
-2. Install Python 3.4 or above.
+2. Install Python 3.8 or above.
 3. Clone this repository.
 4. In the repository root folder, create a virtual environment:
     ```
