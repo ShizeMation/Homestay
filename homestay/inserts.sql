@@ -153,99 +153,99 @@ VALUES ('144','vacation cottage','private room',TRUE,TRUE,700); --
 
 
 -- Insert 10 properties
--- TO_DATE('//'.'DD/MM/YYYY')
+-- TO_DATE(''.'DD/MM/YYYY')
 INSERT INTO homestay.property(property_id,host_id,pricing_id,max_guests,bed_type,wheelchair_accessible,about,street_address,city,state_province,country,available_date)
-VALUES ('217','669','241',8,'queen',FALSE,'A mansion with no pets allowed and with amentities.','1810 Poe Road','Houston','Texas','United States',TO_DATE('14/07/2020'.'DD/MM/YYYY'));
+VALUES ('217','669','241',8,'queen',FALSE,'A mansion with no pets allowed and with amentities.','1810 Poe Road','Houston','Texas','United States',TO_DATE('14/07/2020','DD/MM/YYYY'));
 INSERT INTO homestay.property(property_id,host_id,pricing_id,max_guests,bed_type,wheelchair_accessible,about,street_address,city,state_province,country,available_date)
-VALUES ('501','385','429',2,'bunk',FALSE,'A cabin.','1098 Elk Avenue','South Lake Tahoe','California','United States',TO_DATE('01/06/2020'.'DD/MM/YYYY'));
+VALUES ('501','385','429',2,'bunk',FALSE,'A cabin.','1098 Elk Avenue','South Lake Tahoe','California','United States',TO_DATE('01/06/2020','DD/MM/YYYY'));
 INSERT INTO homestay.property(property_id,host_id,pricing_id,max_guests,bed_type,wheelchair_accessible,about,street_address,city,state_province,country,available_date)
-VALUES ('258','945','740',4,'single',TRUE,'A bungalow in the middle of somewhere better.','4011 Better Street','Overland Park','Kansas','United States',TO_DATE('18/07/2020'.'DD/MM/YYYY'));
+VALUES ('258','945','740',4,'single',TRUE,'A bungalow in the middle of somewhere better.','4011 Better Street','Overland Park','Kansas','United States',TO_DATE('18/07/2020','DD/MM/YYYY'));
 
 INSERT INTO homestay.property(property_id,host_id,pricing_id,max_guests,bed_type,wheelchair_accessible,about,street_address,city,state_province,country,available_date)
-VALUES ('430','980','691',4,'single',TRUE,'A lodge. Enjoy.','2987 Edson Drive','Hinton','Alberta','Canada',TO_DATE('03/10/2020'.'DD/MM/YYYY'));
+VALUES ('430','980','691',4,'single',TRUE,'A lodge. Enjoy.','2987 Edson Drive','Hinton','Alberta','Canada',TO_DATE('03/10/2020','DD/MM/YYYY'));
 INSERT INTO homestay.property(property_id,host_id,pricing_id,max_guests,bed_type,wheelchair_accessible,about,street_address,city,state_province,country,available_date)
-VALUES ('224','114','672',2,'single',FALSE,'This is a home.','3758 Bridgeport Rd','Milton','Ontario','Canada',TO_DATE('29/08/2020'.'DD/MM/YYYY'));
+VALUES ('224','114','672',2,'single',FALSE,'This is a home.','3758 Bridgeport Rd','Milton','Ontario','Canada',TO_DATE('29/08/2020','DD/MM/YYYY'));
 INSERT INTO homestay.property(property_id,host_id,pricing_id,max_guests,bed_type,wheelchair_accessible,about,street_address,city,state_province,country,available_date)
-VALUES ('937','490','175',4,'bunk',FALSE,'We provide amentities.','2258 Port Washington Road','Barons','Alberta','Canada',TO_DATE('07/06/2020'.'DD/MM/YYYY'));
+VALUES ('937','490','175',4,'bunk',FALSE,'We provide amentities.','2258 Port Washington Road','Barons','Alberta','Canada',TO_DATE('07/06/2020','DD/MM/YYYY'));
 
 INSERT INTO homestay.property(property_id,host_id,pricing_id,max_guests,bed_type,wheelchair_accessible,about,street_address,city,state_province,country,available_date)
-VALUES ('543','921','144',6,'queen',TRUE,'Vacation home!','80 Gloucester Avenue','Brompton','South Australia','Australia',TO_DATE('22/12/2020'.'DD/MM/YYYY'));
+VALUES ('543','921','144',6,'queen',TRUE,'Vacation home!','80 Gloucester Avenue','Brompton','South Australia','Australia',TO_DATE('22/12/2020','DD/MM/YYYY'));
 INSERT INTO homestay.property(property_id,host_id,pricing_id,max_guests,bed_type,wheelchair_accessible,about,street_address,city,state_province,country,available_date)
-VALUES ('722','247','531',4,'bunk',FALSE,'Enjoy this town.','51 Edward Bennett Drive','Cabarita','New South Wales','Australia',TO_DATE('07/07/2020'.'DD/MM/YYYY'));
+VALUES ('722','247','531',4,'bunk',FALSE,'Enjoy this town.','51 Edward Bennett Drive','Cabarita','New South Wales','Australia',TO_DATE('07/07/2020','DD/MM/YYYY'));
 
 INSERT INTO homestay.property(property_id,host_id,pricing_id,max_guests,bed_type,wheelchair_accessible,about,street_address,city,state_province,country,available_date)
-VALUES ('194','197','418',2,'single',TRUE,'Great view.','68 Holgate Rd','Ramsholt','','United Kingdom',TO_DATE('18/10/2020'.'DD/MM/YYYY'));
+VALUES ('194','197','418',2,'single',TRUE,'Great view.','68 Holgate Rd','Ramsholt','','United Kingdom',TO_DATE('18/10/2020','DD/MM/YYYY'));
 
 INSERT INTO homestay.property(property_id,host_id,pricing_id,max_guests,bed_type,wheelchair_accessible,about,street_address,city,state_province,country,available_date)
-VALUES ('135','932','181',2,'other',FALSE,'One of a kind.','Rathausstrasse 3','Donauwörth','Freistaat Bayern','Germany',TO_DATE('18/08/2020'.'DD/MM/YYYY'));
+VALUES ('135','932','181',2,'other',FALSE,'One of a kind.','Rathausstrasse 3','Donauwörth','Freistaat Bayern','Germany',TO_DATE('18/08/2020','DD/MM/YYYY'));
 
 
 -- Insert 10 Agreements, Payments, and Reviews
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('466','995','669','217',begin_date,end_date);
+VALUES ('466','995','669','217',TO_DATE('14/04/2019','DD/MM/YYYY'),TO_DATE('24/05/2019','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
-VALUES ('466','669','995',method,amount,transaction_status);
+VALUES ('466','669','995','cash',205000,'completed');
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
-VALUES ('466',rating,communication_comment,cleanliness_comment,value_comment,other_comment);
+VALUES ('466',4,'The host was available for questions and concerns.','Some rooms were dusty.','The experience was nice.','Debatably not worth the capitalism.');
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('729',guest_id,host_id,property_id,begin_date,end_date);
+VALUES ('729',guest_id,'197','194',TO_DATE('10/06/2019','DD/MM/YYYY'),TO_DATE('07/09/2019','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
-VALUES ('729',host_id,guest_id,method,amount,transaction_status);
+VALUES ('729','197',guest_id,method,amount,transaction_status);
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
 VALUES ('729',rating,communication_comment,cleanliness_comment,value_comment,other_comment);
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('662',guest_id,host_id,property_id,begin_date,end_date);
+VALUES ('662',guest_id,host_id,property_id,TO_DATE('','DD/MM/YYYY'),TO_DATE('','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
 VALUES ('662',host_id,guest_id,method,amount,transaction_status);
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
 VALUES ('662',rating,communication_comment,cleanliness_comment,value_comment,other_comment);
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('961',guest_id,host_id,property_id,begin_date,end_date);
+VALUES ('961',guest_id,host_id,property_id,TO_DATE('','DD/MM/YYYY'),TO_DATE('','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
 VALUES ('961',host_id,guest_id,method,amount,transaction_status);
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
 VALUES ('961',rating,communication_comment,cleanliness_comment,value_comment,other_comment);
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('572',guest_id,host_id,property_id,begin_date,end_date);
+VALUES ('572',guest_id,host_id,property_id,TO_DATE('','DD/MM/YYYY'),TO_DATE('','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
 VALUES ('572',host_id,guest_id,method,amount,transaction_status);
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
 VALUES ('572',rating,communication_comment,cleanliness_comment,value_comment,other_comment);
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('930',guest_id,host_id,property_id,begin_date,end_date);
+VALUES ('930',guest_id,host_id,property_id,TO_DATE('','DD/MM/YYYY'),TO_DATE('','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
 VALUES ('930',host_id,guest_id,method,amount,transaction_status);
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
 VALUES ('930',rating,communication_comment,cleanliness_comment,value_comment,other_comment);
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('675',guest_id,host_id,property_id,begin_date,end_date);
+VALUES ('675',guest_id,host_id,property_id,TO_DATE('','DD/MM/YYYY'),TO_DATE('','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
 VALUES ('675',host_id,guest_id,method,amount,transaction_status);
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
 VALUES ('675',rating,communication_comment,cleanliness_comment,value_comment,other_comment);
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('290',guest_id,host_id,property_id,begin_date,end_date);
+VALUES ('290',guest_id,host_id,property_id,TO_DATE('','DD/MM/YYYY'),TO_DATE('','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
 VALUES ('290',host_id,guest_id,method,amount,transaction_status);
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
 VALUES ('290',rating,communication_comment,cleanliness_comment,value_comment,other_comment);
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('981',guest_id,host_id,property_id,begin_date,end_date);
+VALUES ('981',guest_id,host_id,property_id,TO_DATE('','DD/MM/YYYY'),TO_DATE('','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
 VALUES ('981',host_id,guest_id,method,amount,transaction_status);
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
 VALUES ('981',rating,communication_comment,cleanliness_comment,value_comment,other_comment);
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('467',guest_id,host_id,property_id,begin_date,end_date);
+VALUES ('467',guest_id,host_id,property_id,TO_DATE('','DD/MM/YYYY'),TO_DATE('','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
 VALUES ('467',host_id,guest_id,method,amount,transaction_status);
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
