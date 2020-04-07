@@ -101,7 +101,7 @@ CREATE TABLE homestay.property (
         bed_type = 'other'
     ),
     wheelchair_accessible BOOLEAN NOT NULL,
-    descripton VARCHAR(500) NOT NULL,
+    about VARCHAR(500) NOT NULL,
     street_address VARCHAR(20) NOT NULL,
     city VARCHAR(50) NOT NULL,
     state_province VARCHAR(50) NOT NULL,
