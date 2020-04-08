@@ -49,7 +49,6 @@ CREATE TABLE homestay.employee (
 CREATE TABLE homestay.host (
     host_id VARCHAR(32) PRIMARY KEY,
     guest_id VARCHAR(32) NOT NULL,
-    rep_id VARCHAR(32) NOT NULL,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     street_address VARCHAR(50) NOT NULL,
@@ -60,8 +59,7 @@ CREATE TABLE homestay.host (
     phone VARCHAR (16) NOT NULL,
     password_hash VARCHAR(64) NOT NULL,
     salt VARCHAR(64) NOT NULL,
-    FOREIGN KEY (guest_id) REFERENCES homestay.guest,
-    FOREIGN KEY (rep_id) REFERENCES homestay.employee(employee_id)
+    FOREIGN KEY (guest_id) REFERENCES homestay.guest
 );
 
 CREATE TABLE homestay.pricing (

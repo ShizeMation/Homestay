@@ -103,30 +103,30 @@ VALUES ('282','386','Sabrina','Lehrer','Neue Robstr. 12','Esslingen Serach','Bad
 
 
 -- Insert 10 hosts
-INSERT INTO homestay.host(host_id,guest_id,rep_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
-VALUES ('669','983','184','Helen','Acton','1720 Coolidge Street','Columbia Falls','Montana','United States','eokm@yahoo.com','406-892-1832','','');
-INSERT INTO homestay.host(host_id,guest_id,rep_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
-VALUES ('385','276','184','Hector','Boyer','136 Bombardier Way','Mcarthur','California','United States','ufvo@gmail.com','734-956-7710','','');
-INSERT INTO homestay.host(host_id,guest_id,rep_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
-VALUES ('945','584','184','Tommy','Nicoll','3730 Blackwell Street','Dutch Harbor','Alaska','United States','sjbij@gmail.com','907-359-8821','','');
+INSERT INTO homestay.host(host_id,guest_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
+VALUES ('669','983','Helen','Acton','1720 Coolidge Street','Columbia Falls','Montana','United States','eokm@yahoo.com','406-892-1832','','');
+INSERT INTO homestay.host(host_id,guest_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
+VALUES ('385','276','Hector','Boyer','136 Bombardier Way','Mcarthur','California','United States','ufvo@gmail.com','734-956-7710','','');
+INSERT INTO homestay.host(host_id,guest_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
+VALUES ('945','584','Tommy','Nicoll','3730 Blackwell Street','Dutch Harbor','Alaska','United States','sjbij@gmail.com','907-359-8821','','');
 
-INSERT INTO homestay.host(host_id,guest_id,rep_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
-VALUES ('980','771','537','Eli','Perez','3176 Reserve St','Elgin','Ontario','Canada','msp@gmail.com','613-359-7833','','');
-INSERT INTO homestay.host(host_id,guest_id,rep_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
-VALUES ('114','271','537','Shelley','Groh','4301 Township Rd','Fort Mcmurray','Alberta','Canada','apnwj@gmail.com','780-598-4082','','');
-INSERT INTO homestay.host(host_id,guest_id,rep_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
-VALUES ('490','699','537','Ruby','Karcher','2475 Heritage Drive','Calgary','Alberta','Canada','pemvkdml@gmail.com','403-771-4510','','');
+INSERT INTO homestay.host(host_id,guest_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
+VALUES ('980','771','Eli','Perez','3176 Reserve St','Elgin','Ontario','Canada','msp@gmail.com','613-359-7833','','');
+INSERT INTO homestay.host(host_id,guest_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
+VALUES ('114','271','Shelley','Groh','4301 Township Rd','Fort Mcmurray','Alberta','Canada','apnwj@gmail.com','780-598-4082','','');
+INSERT INTO homestay.host(host_id,guest_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
+VALUES ('490','699','Ruby','Karcher','2475 Heritage Drive','Calgary','Alberta','Canada','pemvkdml@gmail.com','403-771-4510','','');
 
-INSERT INTO homestay.host(host_id,guest_id,rep_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
-VALUES ('921','842','843','Katie','Martinovich','42 Davis Street','Mcdowall','Queensland','Australia','qpowjn@hotmail.com','(07) 3159 7877','','');
-INSERT INTO homestay.host(host_id,guest_id,rep_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
-VALUES ('247','790','843','Charles','Zahel','53 Magnolia Drive','Bexley South','New South Wales','Australia','oveovje@gmail.com','(02) 6265 9244','','');
+INSERT INTO homestay.host(host_id,guest_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
+VALUES ('921','842','Katie','Martinovich','42 Davis Street','Mcdowall','Queensland','Australia','qpowjn@hotmail.com','(07) 3159 7877','','');
+INSERT INTO homestay.host(host_id,guest_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
+VALUES ('247','790','Charles','Zahel','53 Magnolia Drive','Bexley South','New South Wales','Australia','oveovje@gmail.com','(02) 6265 9244','','');
 
-INSERT INTO homestay.host(host_id,guest_id,rep_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
-VALUES ('197','308','885','Luke','Herbert','36 Traill Street','Rosewarne','','United Kingdom','eydodij@gmail.com','079 6758 5000','','');
+INSERT INTO homestay.host(host_id,guest_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
+VALUES ('197','308','Luke','Herbert','36 Traill Street','Rosewarne','','United Kingdom','eydodij@gmail.com','079 6758 5000','','');
 
-INSERT INTO homestay.host(host_id,guest_id,rep_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
-VALUES ('932','858','962','Sebastian','Winkel','Schönhauser Allee 81','Villingen-Schwenningen Mühlhausen','Baden-Württemberg','Germany','wwwww4@gmail.com','07721 51 60 07','','');
+INSERT INTO homestay.host(host_id,guest_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt)
+VALUES ('932','858','Sebastian','Winkel','Schönhauser Allee 81','Villingen-Schwenningen Mühlhausen','Baden-Württemberg','Germany','wwwww4@gmail.com','07721 51 60 07','','');
 
 
 -- Insert 10 Pricings
