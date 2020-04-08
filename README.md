@@ -8,8 +8,8 @@
 1. Run a postgresql database with the following settings:
     ```
     host: 'localhost'
-    database: 'postgres'
-    user: 'postgres'
+    database name: 'postgres'
+    superuser: 'postgres'
     password: 'postgres'
     ```
 2. Install Python 3.8 or above.
@@ -34,10 +34,14 @@
     ```
     py makedb.py
     ```
-9. Run the server:
+9. Populate the database:
+    ```
+    py populatedb.py
+    ```
+10. Run the server:
     ```
     py start.py
     ```
-10. If it runs successfully, a URL will be given to you for accessing the web interface.
+11. If it runs successfully, a URL will be given to you for accessing the web interface.
 
-#### Note: you must activate the environment (step 5) before running the project or working on the project!
+#### Note: you must activate the environment (step 5) before running the project!
