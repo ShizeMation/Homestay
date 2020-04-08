@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homestay - Register</title>
+    </head>
+    <body>
+        <h1>
+            Account Registration
+        </h1>
+        {% if bad_input %}
+            <h2>
+                The e-mail has already been used. Try a different one.
+            </h2>
+        {% endif %}
+        <form method="POST">
+            <label for="first_name">First name:</label><br>
+            <input type="text" name="first_name" id="first_name" required><br>
+            <label for="last_name">Last name:</label><br>
+            <input type="text" name="last_name" id="last_name" required><br>
+            <label for="street_address">Street address:</label><br>
+            <input type="text" name="street_address" id="street_address" required><br>
+            <label for="city">City:</label><br>
+            <input type="text" name="city" id="city" required><br>
+            <label for="state_province">State / Province:</label><br>
+            <input type="text" name="state_province" id="state_province" required><br>
+            <label for="country">Country:</label><br>
+            <input type="text" name="country" id="country" required><br>
+            <label for="email">E-mail address:</label><br>
+            <input type="text" name="email" id="email" required><br>
+            <label for="phone">Phone number:</label><br>
+            <input type="text" name="phone" id="phone" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" name="password" id="password" required><br><br>
+            <input type="submit" value="Register">
+        </form>
+    </body>
+</html>

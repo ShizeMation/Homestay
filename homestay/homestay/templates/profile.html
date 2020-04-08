@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homestay - Profile</title>
+    </head>
+    <body>
+        {% if first_name and last_name %}
+        <h1>
+            {{ first_name }} {{ last_name }}, welcome to your Homestay profile.
+        </h1>
+        <form method="POST">
+            <button type="submit" name="logout" value="logout">Log Out</button>
+        </form>
+        {% endif %}
+    </body>
+</html>

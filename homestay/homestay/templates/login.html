@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homestay - Login</title>
+    </head>
+    <body>
+        <h1>
+            Log In
+        </h1>
+        {% if wrong_email %}
+            <h2>
+                E-mail is unknown. <a href="{{ url_for('register') }}">Register?</a>
+            </h2>
+        {% elif wrong_pass %}
+            <h2>
+                Incorrect Password.
+            </h2>
+        {% endif %}
+        <form method="POST">
+            <label for="email">E-mail address:</label><br>
+            <input type="text" name="email" id="email" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" name="password" id="password" required><br><br>
+            <input type="submit" value="Log In">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homestay - Listings</title>
+    </head>
+    <body>
+        <H1>
+            Property Listings
+        </H1>
+        <hr>
+        {% if no_listings %}
+            <p>No Listings.</p>
+            <hr>
+        {% endif %}
+        {% if listings %}
+            {% for prop in listings %}
+                <a href="{{ url_for('property_page', property_id=prop.property_id) }}"
+                style="color: black; text-decoration: none;">
+                    <p>
+                        {{ prop.street_address }}, {{ prop.city }}, {{ prop.state_province }}, {{ prop.country }}<br>
+                        Max occupancy: {{ prop.max_guests }}, Bed type: {{ prop.bed_type }}, Available after: {{ prop.available_date }}<br>
+                        Description:<br>
+                        {{ prop.about }}
+                    </p>
+                </a>
+                <hr>
+            {% endfor %}
+        {% endif %}
+    </body>
+</html>

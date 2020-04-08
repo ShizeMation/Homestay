@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homestay - Property</title>
+    </head>
+    <body>
+        <h1>Homestay</h1>
+        <hr>
+        {% if not_found %}
+            <h2>Property URL not found.</h2>
+            <hr>
+        {% endif %}
+        {% if prop and host and pricing %}
+            <h2>Property #{{ prop.property_id }}</h2>
+            <p>
+                {{ prop.street_address }}, {{ prop.city }}, {{ prop.state_province }}, {{ prop.country }}<br>
+                Hosted by: {{ host.first_name }} {{ host.last_name }}<br>
+                Property type: {{ pricing.property_type }}<br>
+                Room type: {{ pricing.room_type }}<br>
+                Bed type: {{ prop.bed_type }}<br>
+                Max occupancy: {{ prop.max_guests }}<br>
+                Available after: {{ prop.available_date }}<br>
+                Rate: ${{ pricing.rate }} per night.<br>
+            </p>
+            <hr>
+            <p>
+                Descriptions:<br><br>
+                Pets {{ '' if pricing.pets_allowed else 'not' }} allowed.<br>
+                Amenities {{ '' if pricing.amenities else 'not' }} provided.<br>
+                {{ 'Wheelchair' if prop.wheelchair_accessible else 'Not wheelchair' }} accessible.<br>
+                {{ prop.about }}
+            </p>
+        {% endif %}
+    </body>
+</html>
