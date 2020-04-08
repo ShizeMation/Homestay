@@ -189,64 +189,64 @@ INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanlines
 VALUES ('466',4,'The host was available for questions and concerns.','Some rooms were dusty.','The experience was nice.','Debatably not worth the capitalism.');
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('729',guest_id,'197','194',TO_DATE('10/06/2019','DD/MM/YYYY'),TO_DATE('07/09/2019','DD/MM/YYYY'));
+VALUES ('729','842','197','194',TO_DATE('10/06/2019','DD/MM/YYYY'),TO_DATE('07/09/2019','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
-VALUES ('729','197',guest_id,method,amount,transaction_status);
+VALUES ('729','197','842','credit card',13500,'completed');
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
-VALUES ('729',rating,communication_comment,cleanliness_comment,value_comment,other_comment);
+VALUES ('729',3,'The host was available at all time','It was fairly clean.','It was reasonably comfortable.','Neighbours were loud.');
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('662',guest_id,host_id,property_id,TO_DATE('','DD/MM/YYYY'),TO_DATE('','DD/MM/YYYY'));
+VALUES ('467',guest_id,'197','194',TO_DATE('16/01/2020','DD/MM/YYYY'),TO_DATE('05/04/2020','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
-VALUES ('662',host_id,guest_id,method,amount,transaction_status);
+VALUES ('467','197',guest_id,'debit card',66900,'pending');
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
-VALUES ('662',rating,communication_comment,cleanliness_comment,value_comment,other_comment);
+VALUES ('467',2,'The host was only avaible during the day.','It was fair.','It was smaller than expected','The walls were thin.');
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('961',guest_id,host_id,property_id,TO_DATE('','DD/MM/YYYY'),TO_DATE('','DD/MM/YYYY'));
+VALUES ('662','971','385','501',TO_DATE('12/06/2019','DD/MM/YYYY'),TO_DATE('23/07/2019','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
-VALUES ('961',host_id,guest_id,method,amount,transaction_status);
+VALUES ('662','385','971','check',12600,'pending');
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
-VALUES ('961',rating,communication_comment,cleanliness_comment,value_comment,other_comment);
+VALUES ('662',1,'The host was available sometimes.','It was not bad.','The location was not great.','There was bugs.');
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('572',guest_id,host_id,property_id,TO_DATE('','DD/MM/YYYY'),TO_DATE('','DD/MM/YYYY'));
+VALUES ('961','858','980','430',TO_DATE('21/08/2019','DD/MM/YYYY'),TO_DATE('24/08/2019','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
-VALUES ('572',host_id,guest_id,method,amount,transaction_status);
+VALUES ('961','980','858','cash',2000,'completed');
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
-VALUES ('572',rating,communication_comment,cleanliness_comment,value_comment,other_comment);
+VALUES ('961',5,'The host was very nice.','The place was clean.','Would come again.','Would recommend.');
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('930',guest_id,host_id,property_id,TO_DATE('','DD/MM/YYYY'),TO_DATE('','DD/MM/YYYY'));
+VALUES ('572','673','980','430',TO_DATE('26/08/2019','DD/MM/YYYY'),TO_DATE('07/09/2019','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
-VALUES ('930',host_id,guest_id,method,amount,transaction_status);
+VALUES ('572','980','673','debit card',6500,'completed');
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
-VALUES ('930',rating,communication_comment,cleanliness_comment,value_comment,other_comment);
+VALUES ('572',4,'The host was available.','It was generally clean.','The surroundings were nice.','No further comment.');
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('675',guest_id,host_id,property_id,TO_DATE('','DD/MM/YYYY'),TO_DATE('','DD/MM/YYYY'));
+VALUES ('930','912','114','224',TO_DATE('03/09/2019','DD/MM/YYYY'),TO_DATE('27/10/2019','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
-VALUES ('675',host_id,guest_id,method,amount,transaction_status);
+VALUES ('930','114','912','cash',16500,'completed');
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
-VALUES ('675',rating,communication_comment,cleanliness_comment,value_comment,other_comment);
+VALUES ('930',3,'Host was okay.','Generally clean.','It was fine.','No comment.');
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('290',guest_id,host_id,property_id,TO_DATE('','DD/MM/YYYY'),TO_DATE('','DD/MM/YYYY'));
+VALUES ('290','718','247','722',TO_DATE('07/12/2019','DD/MM/YYYY'),TO_DATE('27/12/2019','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
-VALUES ('290',host_id,guest_id,method,amount,transaction_status);
+VALUES ('290','247','718','credit card',4200,'pending');
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
-VALUES ('290',rating,communication_comment,cleanliness_comment,value_comment,other_comment);
+VALUES ('290',3,'The host was nice.','It was clean.','It was okay but would not go again.','No bus stops nearby.');
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('981',guest_id,host_id,property_id,TO_DATE('','DD/MM/YYYY'),TO_DATE('','DD/MM/YYYY'));
+VALUES ('981','983','932','135',TO_DATE('06/02/2020','DD/MM/YYYY'),TO_DATE('13/02/2020','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
-VALUES ('981',host_id,guest_id,method,amount,transaction_status);
+VALUES ('981','932','983','debit card',1600,'pending');
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
-VALUES ('981',rating,communication_comment,cleanliness_comment,value_comment,other_comment);
+VALUES ('981',4,'It was hard to reach the host.','It was clean.','Would come again.','Wished there was a more convenient bed.');
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('467',guest_id,host_id,property_id,TO_DATE('','DD/MM/YYYY'),TO_DATE('','DD/MM/YYYY'));
+VALUES ('675','885','490','937',TO_DATE('13/02/2020','DD/MM/YYYY'),TO_DATE('08/03/2020','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
-VALUES ('467',host_id,guest_id,method,amount,transaction_status);
+VALUES ('675','490','885','credit card',5000,'pendiing');
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
-VALUES ('467',rating,communication_comment,cleanliness_comment,value_comment,other_comment);
+VALUES ('675',2,'Sometimes the host does not respond.','It is okay.','Not my style.','No comment.');
