@@ -245,8 +245,8 @@ INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanlines
 VALUES ('981',4,'It was hard to reach the host.','It was clean.','Would come again.','Wished there was a more convenient bed.');
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('675','885','490','937',TO_DATE('13/02/2020','DD/MM/YYYY'),TO_DATE('08/03/2020','DD/MM/YYYY'));
+VALUES ('675','608','490','937',TO_DATE('13/02/2020','DD/MM/YYYY'),TO_DATE('08/03/2020','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
-VALUES ('675','490','885','credit card',5000,'pendiing');
+VALUES ('675','490','608','credit card',5000,'pendiing');
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
 VALUES ('675',2,'Sometimes the host does not respond.','It is okay.','Not my style.','No comment.');
