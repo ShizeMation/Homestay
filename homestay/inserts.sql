@@ -196,9 +196,9 @@ INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanlines
 VALUES ('729',3,'The host was available at all time','It was fairly clean.','It was reasonably comfortable.','Neighbours were loud.');
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
-VALUES ('467',guest_id,'197','194',TO_DATE('16/01/2020','DD/MM/YYYY'),TO_DATE('05/04/2020','DD/MM/YYYY'));
+VALUES ('467','747','197','194',TO_DATE('16/01/2020','DD/MM/YYYY'),TO_DATE('05/04/2020','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
-VALUES ('467','197',guest_id,'debit card',66900,'pending');
+VALUES ('467','197','747','debit card',66900,'pending');
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
 VALUES ('467',2,'The host was only avaible during the day.','It was fair.','It was smaller than expected','The walls were thin.');
 
