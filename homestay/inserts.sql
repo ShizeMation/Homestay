@@ -89,7 +89,7 @@ INSERT INTO homestay.employee(employee_id,branch_id,first_name,last_name,street_
 VALUES ('520','530','Scott','Gonzales','1067 Carling Avenue','Ottawa','Ontario','Canada','sijv@gmail.com','613-286-1766','','','human resources',30000);
 
 INSERT INTO homestay.employee(employee_id,branch_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt,job_position,salary)
-VALUES ('843','873','Madison','Hyland','22 Cambridge Street','Penrith','New South Wales','Australia','293dk@gmail.com','(02) 4771 9248','','','representative',25000);
+VALUES ('843','873','Madison','Hyland','22 Cambridge Street','Penrith','New South Wales','Australia','293dk@gmail.com','(02) 4771 9248','','','information technology',25000);
 INSERT INTO homestay.employee(employee_id,branch_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt,job_position,salary)
 VALUES ('850','873','Samantha','Tompson','24 Elizabeth Street','North Deep Creek','Queensland','Australia','pskd@gmail.com','(07) 5330 8227','','','customer service',13000);
 
@@ -97,7 +97,7 @@ INSERT INTO homestay.employee(employee_id,branch_id,first_name,last_name,street_
 VALUES ('885','794','Niamh','Barber','54 Shore Street','Stoke Charity','','United Kingdom','jdojn@gmail.com','077 7864 8757','','','representative',22000);
 
 INSERT INTO homestay.employee(employee_id,branch_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt,job_position,salary)
-VALUES ('962','386','Martin','Burger','Budapester Strasse 10','Lengenbostel','Niedersachsen','Germany','pemdkd@gmail.com','04282 70 16 40','','','representative',15000);
+VALUES ('962','386','Martin','Burger','Budapester Strasse 10','Lengenbostel','Niedersachsen','Germany','pemdkd@gmail.com','04282 70 16 40','','','human resources',15000);
 INSERT INTO homestay.employee(employee_id,branch_id,first_name,last_name,street_address,city,state_province,country,email,phone,password_hash,salt,job_position,salary)
 VALUES ('282','386','Sabrina','Lehrer','Neue Robstr. 12','Esslingen Serach','Baden-Württemberg','Germany','fnsnekvj@gmail.com','0711 99 26 37','','','information technology',35000);
 
@@ -180,13 +180,20 @@ INSERT INTO homestay.property(property_id,host_id,pricing_id,max_guests,bed_type
 VALUES ('135','932','181',2,'other',FALSE,'One of a kind.','Rathausstrasse 3','Donauwörth','Freistaat Bayern','Germany',TO_DATE('18/08/2020','DD/MM/YYYY'));
 
 
--- Insert 10 Agreements, Payments, and Reviews
+-- Insert 11 Agreements, Payments, and Reviews
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
 VALUES ('466','995','669','217',TO_DATE('14/04/2019','DD/MM/YYYY'),TO_DATE('24/05/2019','DD/MM/YYYY'));
 INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
 VALUES ('466','669','995','cash',205000,'completed');
 INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
 VALUES ('466',4,'The host was available for questions and concerns.','Some rooms were dusty.','The experience was nice.','Debatably not worth the capitalism.');
+
+INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
+VALUES ('477','995','197','194',TO_DATE('12/07/2019','DD/MM/YYYY'),TO_DATE('19/07/2019','DD/MM/YYYY'));
+INSERT INTO homestay.payment(agreement_id,host_id,guest_id,method,amount,transaction_status)
+VALUES ('477','197','995','debit card',1200,'completed');
+INSERT INTO homestay.review(agreement_id,rating,communication_comment,cleanliness_comment,value_comment,other_comment)
+VALUES ('477',3,'The host was available occasionally.','Somewhat clean.','It was okay.','No comment.');
 
 INSERT INTO homestay.agreement(agreement_id,guest_id,host_id,property_id,begin_date,end_date)
 VALUES ('729','842','197','194',TO_DATE('10/06/2019','DD/MM/YYYY'),TO_DATE('07/09/2019','DD/MM/YYYY'));
