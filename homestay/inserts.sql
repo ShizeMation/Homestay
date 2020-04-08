@@ -130,32 +130,32 @@ VALUES ('932','858','962','Sebastian','Winkel','Schönhauser Allee 81','Villinge
 
 
 -- Insert 10 Pricings
-INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amentities,rate)
+INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amenities,rate)
 VALUES ('418','apartment','shared room',FALSE,FALSE,150); --
-INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amentities,rate)
+INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amenities,rate)
 VALUES ('740','bungalow','private room',TRUE,TRUE,300); --
-INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amentities,rate)
+INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amenities,rate)
 VALUES ('175','condo','shared room',FALSE,TRUE,200); --
-INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amentities,rate)
+INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amenities,rate)
 VALUES ('429','cabin','shared room',TRUE,FALSE,300); --
-INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amentities,rate)
+INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amenities,rate)
 VALUES ('691','lodge','unique space',TRUE,TRUE,500); --
-INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amentities,rate)
+INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amenities,rate)
 VALUES ('241','mansion','private room',FALSE,TRUE,5000); --
-INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amentities,rate)
+INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amenities,rate)
 VALUES ('672','single-family house','private room',FALSE,TRUE,300); --
-INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amentities,rate)
+INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amenities,rate)
 VALUES ('181','tiny home','unique space',TRUE,FALSE,200); --
-INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amentities,rate)
+INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amenities,rate)
 VALUES ('531','townhome','shared room',FALSE,FALSE,200); --
-INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amentities,rate)
+INSERT INTO homestay.pricing(pricing_id,property_type,room_type,pets_allowed,amenities,rate)
 VALUES ('144','vacation cottage','private room',TRUE,TRUE,700); --
 
 
 -- Insert 10 properties
 -- TO_DATE(''.'DD/MM/YYYY')
 INSERT INTO homestay.property(property_id,host_id,pricing_id,max_guests,bed_type,wheelchair_accessible,about,street_address,city,state_province,country,available_date)
-VALUES ('217','669','241',8,'queen',FALSE,'A mansion with no pets allowed and with amentities.','1810 Poe Road','Houston','Texas','United States',TO_DATE('14/07/2020','DD/MM/YYYY'));
+VALUES ('217','669','241',8,'queen',FALSE,'A mansion with no pets allowed and with amenities.','1810 Poe Road','Houston','Texas','United States',TO_DATE('14/07/2020','DD/MM/YYYY'));
 INSERT INTO homestay.property(property_id,host_id,pricing_id,max_guests,bed_type,wheelchair_accessible,about,street_address,city,state_province,country,available_date)
 VALUES ('501','385','429',2,'bunk',FALSE,'A cabin.','1098 Elk Avenue','South Lake Tahoe','California','United States',TO_DATE('01/06/2020','DD/MM/YYYY'));
 INSERT INTO homestay.property(property_id,host_id,pricing_id,max_guests,bed_type,wheelchair_accessible,about,street_address,city,state_province,country,available_date)
@@ -166,7 +166,7 @@ VALUES ('430','980','691',4,'single',TRUE,'A lodge. Enjoy.','2987 Edson Drive','
 INSERT INTO homestay.property(property_id,host_id,pricing_id,max_guests,bed_type,wheelchair_accessible,about,street_address,city,state_province,country,available_date)
 VALUES ('224','114','672',2,'single',FALSE,'This is a home.','3758 Bridgeport Rd','Milton','Ontario','Canada',TO_DATE('29/08/2020','DD/MM/YYYY'));
 INSERT INTO homestay.property(property_id,host_id,pricing_id,max_guests,bed_type,wheelchair_accessible,about,street_address,city,state_province,country,available_date)
-VALUES ('937','490','175',4,'bunk',FALSE,'We provide amentities.','2258 Port Washington Road','Barons','Alberta','Canada',TO_DATE('07/06/2020','DD/MM/YYYY'));
+VALUES ('937','490','175',4,'bunk',FALSE,'We provide amenities.','2258 Port Washington Road','Barons','Alberta','Canada',TO_DATE('07/06/2020','DD/MM/YYYY'));
 
 INSERT INTO homestay.property(property_id,host_id,pricing_id,max_guests,bed_type,wheelchair_accessible,about,street_address,city,state_province,country,available_date)
 VALUES ('543','921','144',6,'queen',TRUE,'Vacation home!','80 Gloucester Avenue','Brompton','South Australia','Australia',TO_DATE('22/12/2020','DD/MM/YYYY'));

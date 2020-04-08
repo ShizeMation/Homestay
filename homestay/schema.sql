@@ -85,7 +85,7 @@ CREATE TABLE homestay.pricing (
         room_type = 'unique space'
     ),
     pets_allowed BOOLEAN NOT NULL,
-    amentities BOOLEAN NOT NULL,
+    amenities BOOLEAN NOT NULL,
     rate NUMERIC(8,2) NOT NULL
 );
 
