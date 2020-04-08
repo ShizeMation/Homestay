@@ -1,4 +1,5 @@
 import psycopg2
+import psycopg2.extras
 
 class Database:
     def __init__(self):
@@ -8,7 +9,9 @@ class Database:
             password = 'postgres',
             host = 'localhost',
         )
-        self.cur = self.conn.cursor()
+        self.cur = self.conn.cursor(
+            cursor_factory = psycopg2.extras.RealDictCursor
+        )
     
     def __enter__(self):
         return self.cur
