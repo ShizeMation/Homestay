@@ -12,5 +12,22 @@
             <button type="submit" name="logout" value="logout">Log Out</button>
         </form>
         {% endif %}
+        {% if agreements %}
+            <h2>Your agreements:</h2>
+            <hr>
+            {% for a in agreements %}
+                Agreement #{{ a.agreement_id }}<br>
+                <a href="{{ url_for('property_page', property_id=a.property_id) }}">View Property</a><br>
+                From {{ a.begin_date }} to {{ a.end_date }}.<br>
+                Payment method: {{ a.method }}<br>
+                Amount: ${{ a.amount }}<br>
+                Payment status: {{ a.transaction_status }}
+                {% if a.rating %}
+                    <br>
+                    You rated {{ a.rating }} star{{ '' if a.rating == 1 else 's' }}.
+                {% endif %}
+                <hr>
+            {% endfor %}
+        {% endif %}
     </body>
 </html>

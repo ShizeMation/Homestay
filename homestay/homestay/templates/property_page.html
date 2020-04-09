@@ -22,14 +22,29 @@
                 Available after: {{ prop.available_date }}<br>
                 Rate: ${{ pricing.rate }} per night.<br>
             </p>
-            <hr>
             <p>
-                Descriptions:<br><br>
-                Pets {{ '' if pricing.pets_allowed else 'not' }} allowed.<br>
-                Amenities {{ '' if pricing.amenities else 'not' }} provided.<br>
-                {{ 'Wheelchair' if prop.wheelchair_accessible else 'Not wheelchair' }} accessible.<br>
-                {{ prop.about }}
+                Other descriptions:<br>
+                <ul>
+                    <li>Pets {{ '' if pricing.pets_allowed else 'not' }} allowed.<br></li>
+                    <li>Amenities {{ '' if pricing.amenities else 'not' }} provided.<br></li>
+                    <li>{{ 'Wheelchair' if prop.wheelchair_accessible else 'Not wheelchair' }} accessible.<br></li>
+                    <li>{{ prop.about }}</li>
+                </ul>
             </p>
+        {% endif %}
+        {% if reviews %}
+            <hr>
+            <h2>Reviews:</h2>
+            {% for r in reviews %}
+                <p>
+                    {{ r.rating }} star{{ '' if r.rating == 1 else 's' }}.<br>
+                    {{ r.communication_comment }}<br>
+                    {{ r.cleanliness_comment }}<br>
+                    {{ r.value_comment }}<br>
+                    {{ r.other_comment }}
+                </p>
+                <hr>
+            {% endfor %}
         {% endif %}
     </body>
 </html>

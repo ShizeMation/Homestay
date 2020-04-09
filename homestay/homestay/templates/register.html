@@ -7,12 +7,18 @@
         <h1>
             Account Registration
         </h1>
+        <hr>
         {% if bad_input %}
             <h2>
                 The e-mail has already been used. Try a different one.
             </h2>
         {% endif %}
         <form method="POST">
+            <input type="radio" id="guest" name="account_type" value="guest" checked>
+            <label for="guest">Guest</label><br>
+            <input type="radio" id="host" name="account_type" value="host">
+            <label for="host">Host</label><br><br>
+
             <label for="first_name">First name:</label><br>
             <input type="text" name="first_name" id="first_name" required><br>
             <label for="last_name">Last name:</label><br>
@@ -33,5 +39,6 @@
             <input type="password" name="password" id="password" required><br><br>
             <input type="submit" value="Register">
         </form>
+        <hr>
     </body>
 </html>

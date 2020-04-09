@@ -7,6 +7,7 @@
         <h1>
             Log In
         </h1>
+        <hr>
         {% if wrong_email %}
             <h2>
                 E-mail is unknown. <a href="{{ url_for('register') }}">Register?</a>
@@ -17,11 +18,19 @@
             </h2>
         {% endif %}
         <form method="POST">
+            <input type="radio" id="guest" name="account_type" value="guest" checked>
+            <label for="guest">Guest</label><br>
+            <input type="radio" id="host" name="account_type" value="host">
+            <label for="host">Host</label><br>
+            <input type="radio" id="admin" name="account_type" value="admin">
+            <label for="admin">Admin</label><br><br>
+
             <label for="email">E-mail address:</label><br>
             <input type="text" name="email" id="email" required><br>
             <label for="password">Password:</label><br>
             <input type="password" name="password" id="password" required><br><br>
             <input type="submit" value="Log In">
         </form>
+        <hr>
     </body>
 </html>
