@@ -119,7 +119,17 @@ def dashboard():
         if 'logout' in request.form:
             session.pop('host_id', None)
     if 'host_id' in session:
-        return render_template('dashboard.html')
+        with Database() as db:
+            db.execute(
+                """
+                SELECT property_id, max_guests, bed_type, about, street_address, city,
+                    state_province, country, available_date FROM homestay.property
+                    WHERE (host_id = %s);
+                """,
+                (session['host_id'],)
+            )
+            properties = db.fetchall()
+        return render_template('dashboard.html', listings=properties)
     else:
         return redirect(url_for('login'))
 
