@@ -4,12 +4,14 @@
         <title>Homestay - Dashboard</title>
     </head>
     <body>
+        {% if first_name and last_name %}
         <h1>
-            Host Dashboard
+            {{ first_name }} {{ last_name }}, welcome to your Homestay dashboard.
         </h1>
         <form method="POST">
             <button type="submit" name="logout" value="logout">Log Out</button>
         </form>
+        {% endif %}
         {% if listings %}
             <h2>Your property listings:</h2>
             <hr>

@@ -122,6 +122,13 @@ def dashboard():
         with Database() as db:
             db.execute(
                 """
+                SELECT first_name, last_name FROM homestay.host WHERE (host_id = %s);
+                """,
+                (session['host_id'],)
+            )
+            account = db.fetchone()
+            db.execute(
+                """
                 SELECT property_id, max_guests, bed_type, about, street_address, city,
                     state_province, country, available_date FROM homestay.property
                     WHERE (host_id = %s);
@@ -129,7 +136,12 @@ def dashboard():
                 (session['host_id'],)
             )
             properties = db.fetchall()
-        return render_template('dashboard.html', listings=properties)
+        return render_template(
+            'dashboard.html',
+            first_name = account['first_name'],
+            last_name = account['last_name'],
+            listings = properties
+        )
     else:
         return redirect(url_for('login'))
 
